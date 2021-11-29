@@ -61,7 +61,7 @@ However, there is another option - using shebang syntax. If the first four bytes
 
 ```AAAAEFCOHPN```
 
-One other quirk remains: the server does not respond with a proper http header when the flag is recovered. `curl` errors out becaue of this. However, a simple Python script can do the same transaction. We recover the flag:
+One other quirk remains: the server does not respond with a proper http header when the flag is recovered. `curl` errors out because of this. However, a simple Python script can do the same transaction. We recover the flag:
 
 ```DrgnS{valisMadeMeChangeTheFlagPfff}```
 
