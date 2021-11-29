@@ -11,7 +11,7 @@ score of 202 points.
 
 We are given the Python source to the server. Connecting to the server gives us a login screen:
 
-[CTFGatewayInterface login screen]
+[CTFGatewayInterface login screen](https://github.com/ucfjimg/ctf/blob/master/dragon-sector-2021/cgi/index.png)
 
 which we will never use again as we're just going to hit the endpoint with `curl` or a custom client.
 
