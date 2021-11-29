@@ -36,9 +36,9 @@ which prevents us from just asking for the flag directly, and
 
 If the CGI script to be run exists, but isn't executable, the server sets it to be executable before trying to call it. Now if only we had a way to write into the `cgi-bin` directory where the scripts live...
 
-Looking at the scripts already in that directory, we find three, plus a Python file with some helper functions. `startAuth.cgi` is used by the login page to write a salted, hashed version of the entered password to a session file, and `authResult.cgi` which reads the hash back and compares it against the hash of the correct password. This, however, is a red herring; logging in won't get us any closer to the flag. The third script, called simply `x`, simply prints the fact that on the real server, it would print the flag.
+Looking at the scripts already in that directory, we find three, plus a Python file with some helper functions. `startAuth.cgi` is used by the login page to write a salted, hashed version of the entered password to a session file, and `authResult.cgi` reads the hash back and compares it against the hash of the correct password. This, however, is a red herring; logging in won't get us any closer to the flag. The third script, called simply `x`, simply prints the fact that on the real server, it would print the flag.
 
-Looking more deeply at `startAuth.cgi`, we note that it writes the session files into the `cgi-bin` folder! Here is what we're looking for: we know we can force the server to `chmod +x` the session file and execute it. The relevant code is 
+Looking more deeply at `startAuth.cgi`, we note that it writes the session files into the `cgi-bin` folder! Here is what we're looking for: we know we can force the server to `chmod +x` the session file and execute it. The relevant code in `startAuth.cgi` is 
 
 ```
 sid = os.urandom(20).hex()
